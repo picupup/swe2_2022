@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta-charset:'utf-8'>
+        <title> ITC INDEX Startseite </title>
+        <script type="text/javascript" src="itc_functions.js"></script> 
+    </head>
+    <body>
+        <h1> Hier findet die Suche Statt</h1>
+<html>
+    <head> 
+        <meta-charset:'utf-8'>
+        <title> ITC INDEX Startseite </title>
+    </head>
+    <body>
+        <nav>
+            <paragraph> Anfrage zur Übersetzung stellen: </paragraph> <br>
+            <form name="itc_tr_such_form_name" id="itc_tr_such_form_id" action="#" onsubmit="return false" >
+                <label> Name </label> 
+                <input id="name_id" type="text" name="name" placeholder="Max" value="" required> <br>
+                <label> E-Mail </label>
+                <input id="email_id" value=""  type="text" name="email" required> <br>
+                <label> Art des Dokuments </label>
+                <input id="art_id" value=""  type="text" required> <br>
+                <label> Dokument </label>
+                <input id="doku_id" type="file" value="" > <br>
+                <label> von Sprache </label>
+                <input id="von_sprache_id" type="text" value=""  required > <br>
+                <label> zu Sprache </label>
+                <input id="zu_sprache_id" type="text" value=""  required> <br>
+                <label> Zusätzliche Bemerkungen </label> <br>
+                <textarea rows="7"></textarea> <br>
+                <button type="submit" onclick="anfrage_antwort(this)">Abschicken</button> 
+            </form>
+            <div id="itc_such_ergebnis" >Anfrage Ergebnis wird hier zu sehen sein.</div>
+            
+        </nav>
+    </body>
+</html>
+                
+

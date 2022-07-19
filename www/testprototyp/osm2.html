@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <title>OSM mit Leaflet Minimum</title>
+        <meta charset="utf-8" />
+          <link rel="stylesheet" type="text/css" href="https://informatik.hs-bremerhaven.de/leaflet/leaflet.css" />
+            <script type="text/javascript" src="https://informatik.hs-bremerhaven.de/leaflet/leaflet.js"></script>
+              <style>
+  html,
+    body {
+          margin: 0px;
+              padding: 0px;
+                }
+
+      html,
+        body,
+          #mapid {
+                width: 100%;
+                    height: 100%;
+                      }
+            </style>
+  </head>
+
+  <body>
+      <div id="mapid"></div>
+        <script>
+              var mymap = new L.Map('mapid');
+
+              // OpenStreetMap-Karte einfügen
+              var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+              var osmAtt = '<a href="https://openstreetmap.org">OpenStreetMap</a>';
+              var args = {
+                                minZoom: 4,
+                                maxZoom: 20,
+                                attribution: osmAtt
+                              }
+              var osm = new L.TileLayer(osmUrl, args);
+
+              // Fokus der Karte auf Hochschule Bremerhaven setzen:
+              mymap.setView([53.54, 8.5835], 17);
+              mymap.addLayer(osm);
+            </script>
+              <!--weitere Skripte zur modularen Einbindung von Funktionen:
+                    <script type="text/javascript" src="scripts....js"></script>  -->
+  </body>
+
+</html>
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>ITC INDEX</title>
+        <!-- <script type="text/javascript" src="itc_functions.js"></script>  -->
+        <script>
+            // function setBody() {
+            // let wasAnderes = document.getElementById("variabler_body");
+            // wasAnderes.innerHTML = ("ue_anfrage.html");
+            // }
+            // window.onclick=setBody;
+            function load(doc) {
+                let req = new XMLHttpRequest();
+                req.onreadystatechange = function() {
+                    if (req.readyState == 4 && req.status == 200) {
+                        document.getElementById("variabler_body").innerHTML = (req.responseText);
+                        }
+                    }
+                req.open("GET", doc );
+                req.send();
+                }
+            function execUebersetzungAnfrage(){
+                load("ue_anfrage.html");
+                }
+            function execDolmetscherAnfrage(){
+                load("dol_anfrage.html");
+            }
+            //window.document.onclick=load("ue_anfrage.html");
+        </script>
+    </head>
+    <body id="body">
+        <h1> Herzlich Willkommen, auf der neuen Webseite des ITC Bremerhaven! </h1>
+        <paragraph> ITC ist die Abkürzung für "International Translation Company" und genau darum geht es hier: <br>
+                Wir vermitteln Ihnen seit 1994 für alle Weltsprachen einen Dolmetscher oder einen Übersetzer und wickeln den gesamten Prozess für Sie ab.
+        </paragraph>
+        <button onclick="execUebersetzungAnfrage()" id="ue_button">Anfrage stellen für eine Übersetzung</button>
+        <button onclick="execDolmetscherAnfrage()" id="do_button">Anfrage stellen für einen Dolmetscher</button>
+        <nav  id="variabler_body">
+        
+        </nav>
+
+
+    </body>
+</html>
+
+
+
