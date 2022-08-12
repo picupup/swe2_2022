@@ -1,5 +1,6 @@
 <?php
-require_once("html_pageHeader.php");
+//require_once("html_pageHeader.php");
+html_intern_pageHeader();
 echo" <main class='messageMain'>
         <div class='message-container'>
           <div class='message-box'>
@@ -8,5 +9,6 @@ echo" <main class='messageMain'>
           </div>
         </div>
       </main>";
-require_once("html_footer.php");
+//require_once("html_footer.php");
+html_footer();
 ?>

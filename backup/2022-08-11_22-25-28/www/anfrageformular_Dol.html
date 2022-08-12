@@ -1,0 +1,50 @@
+<nav>
+    <h3> Anfrage für einen Dolmetscher stellen: </h3> <br>
+    <form method="post" action="./anfrageVerarbeiten.php">
+        <p style="font-weight:bold">Persönliche Angaben:</p>
+        <label> Nachname </label>
+        <input id="nn_id" type="text" name="name" placeholder="Nachname" value="" required> <br>
+        <label> Vorname </label>
+        <input id="vn_id" type="text" name="vorname" placeholder="Vorname" value="" required> <br>
+        <label> Geburtsdatum </label>      
+        <input id="gb_id" type="date" name="geburtsdatum" placeholder="Geburtsdatum" value="" required> <br>
+        
+        <label for="ge_id">Geschlecht</label>
+        <select name="ge_id" id="ge_id" defaultValue="">
+            <option value="m">Mänlich</option>
+            <option value="w">Weiblich</option>
+            <option value="d">Divers</option>
+        </select><br>
+
+        <label for="person_art_id">Person</label>
+        <select name="person_art_id" id="person_art_id" defaultValue="">
+            <option value="1">Privat</option>
+            <option value="2">Geschäftlich</option>
+        </select><br>
+        
+        <label> Straße </label> 
+        <input id="st_id" type="text" name="st_id" placeholder="Straße" value="" required>
+        <label> Nr. </label> 
+        <input id="hausnr_id" type="text" name="hausnr_id" placeholder="Hausnr" value="" required> <br>
+        <label> PLZ </label> 
+        <input id="plz_id" type="text" name="plz_id" placeholder="PLZ" value="" required> <br>
+        <label> Ort </label> 
+        <input id="ort_id" type="text" name="ort_id" placeholder="Ort" value="" required> <br>
+        <label> E-Mail </label>
+        <input id="email_id" value=""  type="text" placeholder="E-Mail" name="email" required> <br>
+
+        <p style="font-weight:bold">Angaben zum Auftrag:</p>
+        <label> von Sprache </label>
+        <input id="von_sprache_id" type="text" placeholder="Sprache Ihres Dokuments"value=""  required > <br>
+        <label> zu Sprache </label>
+        <input id="zu_sprache_id" type="text" placeholder="zu Sprache" value=""  required> <br>
+        <label> Treffpunkt </label>
+        <input type="text" placeholder="Treffpunkt" value=""  required> <br>
+        <label> Zeitpunkt </label>
+        <input type="date" placeholder="Datum" value=""  required>
+        <input type="time" placeholder="Uhrzeit" value=""  required> Uhr <br>
+        <label> Zusätzliche Bemerkungen </label><br>
+        <textarea rows="7"></textarea><br>
+        <button type="submit" onclick="anfrage_antwort(this)">Abschicken</button> 
+    </form>
+</nav>

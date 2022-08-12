@@ -28,7 +28,11 @@ function checkIfExist($array, $datenbankVerbindung){
         $kundenId = mysqli_insert_id($datenbankVerbindung);
       } else {
         echo "Sie kennen wir schon!"."<br><br>";
+
         while($row = mysqli_fetch_assoc($result2)){
+          if($adressId != $row['adresse']){
+            $datenbankVerbindung -> query("UPDATE itc_kunden SET adresse = '$adressId' WHERE vorname='$array[vorname]' and nachname='$array[name]' and gbdatum='$array[geburtsdatum]'");
+          };
           $kundenId = $row['id'];
         } 
       }

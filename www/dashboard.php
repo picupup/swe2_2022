@@ -1,13 +1,43 @@
 <?php
+
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+include("html_parts.php");
 
-require_once("html_intern_pageHeader.php");
+
+
+//require_once("html_intern_pageHeader.php");
+html_intern_pageHeader();
 echo"<main>
         <h2 class='startHeading'>Willkommen, auf Ihrem Dashboard!</h2><br>
         <h4>Kunden-Datenbank:</h4><br>
-        <div id=kundenTabelle></div>
+        <table id=kundenTabelle>
+            <thead>
+                <tr>
+                    <th>Kunden-ID</th>
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                    <th>Geschlecht</th>
+                    <th>Geburtsdatum</th>
+                    <th>Kundenart</th>
+                    <th>Adress-ID</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Kunden-ID</th>
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                    <th>Geschlecht</th>
+                    <th>Geburtsdatum</th>
+                    <th>Kundenart</th>
+                    <th>Adress-ID</th>
+                </tr>
+            </tfoot>
+        </table>
     </main>";
-require_once("html_footer.php");
-?>g
+//require_once("html_footer.php");
+html_footer();
+?>

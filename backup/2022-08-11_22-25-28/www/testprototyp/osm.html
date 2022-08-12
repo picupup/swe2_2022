@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://informatik.hs-bremerhaven.de/leaflet/leaflet.css">
+    <script type="text/javascript" src="https://informatik.hs-bremerhaven.de/leaflet/leaflet.js"></script>
+    <style>
+         html,
+         body {
+             margin: 0px;
+             padding: 0px;
+         }
+         html,
+         body,
+         #mapid {
+             width: 100%;
+             height: 100%;
+         }
+    </style>
+  </head>
+
+	<body>
+  <button onclick='fokusaendern(53.542271, 8.57)'>Kartenfukus Seebäderkaje</button>
+  <button onclick='fokusaendern(53.54, 8.5835)'>Kartenfukus Hochschule</button>
+  <button onclick='schiffsmarker()'>Schiffsmarker anzeigen</button>
+  <button onclick='zoomanzeigen()'>Zoomfaktor anzeigen</button>
+  <div id="mapid"></div>
+
+	<script>
+    var mymap = new L.Map('mapid');
+
+    //OpenStreetMap-Karte einfügen
+    var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    var osmAtt = '<a href="https://openstreetmap.org">OpenStreetMap</a>';
+    var args = {
+      minZoom:4,
+      maxZoom:20,
+      attribution: osmAtt
+    }
+    var osm = new L.TileLayer(osmUrl, args);
+
+   //Fokus der Karte auf Ali setzen:
+    mymap.setView([53.54, 8.5835], 17);
+    mymap.addLayer(osm);    
+	</script>
+
+  <!--Kommentieren außerhalb von script-->
+   <script type="text/javascript" src="scripts/scriptlingeorg.js"></script>
+    <!-- <script type="text/javascript" src="scripts/scriptsrathgeber.js"></script> -->
+		<!-- <script type="text/javascript" src="scripts/scripterfkarimi.js"></script> -->
+		<!-- <script type="text/javascript" src="scripts/scriptsbendler.js"></script> -->
+    <!-- <script type="text/javascript" src="scripts/scriptalibahmann.js"></script> -->
+	</body>
+</html>
+
