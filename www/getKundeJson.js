@@ -17,17 +17,17 @@ xhttp.onreadystatechange = function() {
                 {"data":"adresse"}, 
             ]
         });
-            $('#kundenTabelle').DataTable({
-                    "data":data,
-                    "columns":[
-                    {"data":"id"},
-                    {"data":"vorname"},
-                    {"data":"nachname"},
-                    {"data":"geschlecht"},
-                    {"data":"gbdatum"},
-                    {"data":"art"},
-                    {"data":"adresse"}, 
-                ]
-            });
+            // $('#kundenTabelle').DataTable({
+            //         "data":data,
+            //         "columns":[
+            //         {"data":"id"},
+            //         {"data":"vorname"},
+            //         {"data":"nachname"},
+            //         {"data":"geschlecht"},
+            //         {"data":"gbdatum"},
+            //         {"data":"art"},
+            //         {"data":"adresse"}, 
+            //     ]
+            // });
         }
     };
