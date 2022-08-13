@@ -1,6 +1,8 @@
 <nav>
     <h3> Anfrage für einen Dolmetscher stellen: </h3> <br>
     <form method="post" action="./anfrageVerarbeiten.php">
+
+        <!--Stammdaten-->
         <p style="font-weight:bold">Persönliche Angaben:</p>
         <label> Nachname </label>
         <input id="nn_id" type="text" name="name" placeholder="Nachname" value="" required> <br>
@@ -39,7 +41,7 @@
         <label> zu Sprache </label>
         <input name="zuSprache" id="zu_sprache_id" type="text" placeholder="zu Sprache" value=""  required> <br>
         
-        <!--exklusiv für Dolmetscher-->
+        <!--Auftragsdaten exklusiv für Dolmetscher-->
         <label> Treffpunkt </label>
         <input name="treffpunkt" type="text" placeholder="Treffpunkt" value=""  required> <br>
         <label> Zeitpunkt </label>
@@ -49,6 +51,11 @@
         <!--Kommentar-->
         <label> Zusätzliche Bemerkungen </label><br>
         <textarea name="kommentar" rows="7"></textarea><br>
+
+        <!--AGB-Bestätigung-->
+        <input type="checkbox" name="agb">
+        <label>Hiermit erkläre ich mich mit den Allgemeinen Geschäftsbedingungen der ITC-Bremerhaven einverstanden</label><br>
+    
 
         <button type="submit" onclick="anfrage_antwort(this)">Abschicken</button> 
     </form>

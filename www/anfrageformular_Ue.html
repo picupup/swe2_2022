@@ -2,6 +2,7 @@
     <h3> Anfrage für die Übersetzung eines Dokuments stellen: </h3> <br>
     <form method="post" oder action="./anfrageVerarbeiten.php">
 
+        <!--Stammdaten-->
         <p style="font-weight:bold">Persönliche Angaben:</p>
         <label> Nachname </label>
         <input id="nn_id" type="text" name="name" placeholder="Nachname" value="" required> <br>
@@ -34,8 +35,7 @@
         <label> E-Mail </label>
         <input id="email_id" value=""  type="text" placeholder="E-Mail" name="email" required> <br>
 
-
-
+         <!--Auftragsdaten exklusiv für Überstzung-->
         <p style="font-weight:bold">Angaben zum Auftrag:</p>
         <label> Art des Dokuments </label>
         <input id="dock_art_id" value=""  type="text" placeholder="Titel Ihres Dokuments" name="docTyp"> <br>
@@ -45,8 +45,16 @@
         <input id="von_sprache_id" type="text" placeholder="Sprache Ihres Dokuments"value="" name="vonSprache"  required > <br>
         <label> zu Sprache </label>
         <input id="zu_sprache_id" type="text" placeholder="Übersetzen in" value="" name="zuSprache" required> <br>
-        <label> Zusätzliche Bemerkungen </label> <br>
+        
+        <!--Kommentar-->
+        <label>Notieren Sie bitte hier die für die gewählte Zielsprache korrekte Schreibweise<br> aller in Ihrem Dokument vorkommenden Namen:</label> <br>
         <textarea name="kommentar" rows="7"></textarea> <br>
+
+        <input type="Checkbox" name="abholung">
+        <label>Ich möchte die die Übersetzung in Papierform in der Geschäftsstelle vorort abholen</labell><br>
+        <input type="checkbox" name="agb">
+        <label>Hiermit erkläre ich mich mit den Allgemeinen Geschäftsbedingungen der ITC-Bremerhaven einverstanden</label><br>
+    
         
         <button type="submit" onclick="anfrage_antwort(this)">Abschicken</button> 
 

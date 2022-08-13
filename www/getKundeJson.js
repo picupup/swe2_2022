@@ -6,6 +6,18 @@ xhttp.onreadystatechange = function() {
             var data = JSON.parse(xhttp.responseText);
             //console.log(data);
             $('#kundenTabelle').DataTable({
+                "data":data,
+                "columns":[
+                {"data":"id"},
+                {"data":"vorname"},
+                {"data":"nachname"},
+                {"data":"geschlecht"},
+                {"data":"gbdatum"},
+                {"data":"art"},
+                {"data":"adresse"}, 
+            ]
+        });
+            $('#kundenTabelle').DataTable({
                     "data":data,
                     "columns":[
                     {"data":"id"},
