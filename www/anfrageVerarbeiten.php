@@ -3,8 +3,10 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+include("html_parts.php");
 
-require_once("html_pageHeader.php");
+//require_once("html_pageHeader.php");
+html_pageHeader();
 echo"<main class=messageMain> 
       <div class='message-container'>
         <div class='message-box'>
@@ -56,6 +58,7 @@ if (!$conn){
       </div>
     </div>
 </main>";
-require_once("html_footer.php");
+//require_once("html_footer.php");
+html_footer();
 ?>
 
