@@ -22,7 +22,10 @@ echo"<main>
                     <th>Geschlecht</th>
                     <th>Geburtsdatum</th>
                     <th>Kundenart</th>
-                    <th>Adress-ID</th>
+                    <th>Straße</th>
+                    <th>Hausnummer</th>
+                    <th>Postleitzahl</th>
+                    <th>Ort</th>
                 </tr>
             </thead>
             <tfoot>
@@ -33,7 +36,29 @@ echo"<main>
                     <th>Geschlecht</th>
                     <th>Geburtsdatum</th>
                     <th>Kundenart</th>
-                    <th>Adress-ID</th>
+                    <th>Straße</th>
+                    <th>Hausnummer</th>
+                    <th>Postleitzahl</th>
+                    <th>Ort</th>
+                </tr>
+            </tfoot>
+        </table><br><br>
+        <h4>Anfragen:</h4>
+        <table id=anfragen>
+            <thead>
+                <tr>
+                    <th>Anfrage-ID</th>
+                    <th>Kunden-ID</th>
+                    <th>Beschreibung</th>
+                    <th>Namen-Aufklärung</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Anfrage-ID</th>
+                    <th>Kunden-ID</th>
+                    <th>Beschreibung</th>
+                    <th>Namen-Aufklärung</th>
                 </tr>
             </tfoot>
         </table>

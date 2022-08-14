@@ -39,11 +39,11 @@ function html_intern_pageHeader(){
         <!-- <link rel='stylesheet' type='text/css' href='//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css' /> -->
 
         <link rel=\"stylesheet\" type=\"text/css\" href=\"DataTables/files/datatables.min.css\"/>
- 
-        <script type=\"text/javascript\" src=\"DataTables/files/datatables.min.js\"></script>
-        
         <script type='text/javascript' src='https://code.jquery.com/jquery-3.5.1.js'></script>
         <script type='text/javascript' src='//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js'></script>
+        <script type=\"text/javascript\" src=\"DataTables/files/datatables.min.js\"></script>
+        
+        
         <!-- <script type='text/javascript' src='./getKunde.js'></script> -->
         <script type='text/javascript' src='./getKundeJson.js'></script>
         

@@ -1,6 +1,7 @@
 <?php
+include("html_parts.php");
 //require_once("html_pageHeader.php");
-html_intern_pageHeader();
+html_pageHeader();
 echo" <main class='messageMain'>
         <div class='message-container'>
           <div class='message-box'>
