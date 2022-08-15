@@ -23,7 +23,6 @@ DROP TABLE IF EXISTS itc_sprachen;
 CREATE TABLE  itc_sprachen (
     id INT NOT NULL AUTO_INCREMENT,
     sprache TEXT,
-    variante INT,
     PRIMARY KEY (id)
 );
 
@@ -56,6 +55,7 @@ CREATE TABLE itc_skills (
     id INT NOT NULL AUTO_INCREMENT,
     translator_id INT,
     sprach_id INT,
+    variante INT,
     PRIMARY KEY (id),
     FOREIGN KEY  (translator_id) REFERENCES itc_translator(id),
     FOREIGN KEY  (sprach_id) REFERENCES itc_sprachen(id) 
