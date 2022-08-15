@@ -38,4 +38,4 @@ function checkIfExist($array, $datenbankVerbindung){
       }
       return array($kundenId, $adressId);
     }
-    ?>
+?>

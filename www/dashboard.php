@@ -43,7 +43,7 @@ echo"<main>
                 </tr>
             </tfoot>
         </table><br><br>
-        <h4>Anfragen:</h4>
+        <h4>Anfragen für Übersetzungen:</h4>
         <table id=anfragen>
             <thead>
                 <tr>
