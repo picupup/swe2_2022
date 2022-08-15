@@ -29,20 +29,35 @@ function get_all_sprachen(){
     }
     $sql = "select id, sprache from itc_sprachen";
     $result=mysqli_query($conn, $sql);
+    echo "<label for='dol_lable_id'>Dolmetscher Sprachen</label>
+    <select style='margin=10px' name='geschlecht' id='dol_select_id' defaultValue='null' multiple>";
     while($row = mysqli_fetch_assoc($result)) {
-        foreach ($row as $item){
-            echo $item;
+        $con=true;
+        $eins;
+        $zwei;
+        foreach($row as $item){
+            if ($con){
+                $eins = $item;
+                $con=false;
+            }
+            else{
+                $zwei = $item;
+            }
         }
-        $data[] = $row;
+        $con=true;
+        echo "<option value=\"",$eins,"\">",$zwei,"</option>";
+        //$data[] = $row;
     };
+    echo "</select><br>";
+    echo $row;
 
-    if (isset($data)){
-        $json = json_encode($data);
-        //echo $json; 
-    } else{
-        $json = null;
-        echo "keine Einträge";
-    }
+    // if (isset($data)){
+    //     $json = json_encode($data);
+    //     //echo $json; 
+    // } else{
+    //     $json = null;
+    //     echo "keine Einträge";
+    // }
 }
 
 
