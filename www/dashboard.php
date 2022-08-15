@@ -12,6 +12,8 @@ include("html_parts.php");
 html_intern_pageHeader();
 echo"<main>
         <h2 class='startHeading'>Willkommen, auf Ihrem Dashboard!</h2><br>
+        <button href='#' onclick=\"dialogOeffnen('ue_anfrage_dia')\">Übersetzer-Anfrage Erstellen</button>
+        <button href='#' onclick=\"dialogOeffnen('dol_anfrage_dia')\">Dolmetscher-Anfrage Erstellen</button>
         <h4>Anfragen für Übersetzungen:</h4>
         <table id=ue_anfragen>
             <thead>
@@ -113,6 +115,7 @@ echo"<main>
             </tfoot>
         </table><br><br>
     </main>";
+
 //require_once("html_footer.php");
 html_footer();
 ?>

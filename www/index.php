@@ -14,10 +14,8 @@ echo"
                 Wir vermitteln Ihnen seit 1994 für alle Weltsprachen einen Dolmetscher oder einen Übersetzer und wickeln den gesamten Prozess für Sie ab.
         </paragraph><br>
     </div>
-    <button class='variabler_body' style='margin-left:0%;float:left;margin-right:10px' onclick='execUebersetzungAnfrage()' id='ue_button'>Anfrage stellen für eine Übersetzung</button>
-    <button class='variabler_body' onclick='execDolmetscherAnfrage()' id='do_button'>Anfrage stellen für einen Dolmetscher</button>
-    <nav class='variabler_body'  id='variabler_body'>
-    </nav>
+    <button href='#' onclick=\"dialogOeffnen('ue_anfrage_dia')\">Übersetzer-Anfrage Erstellen</button>
+    <button href='#' onclick=\"dialogOeffnen('dol_anfrage_dia')\">Dolmetscher-Anfrage Erstellen</button>
 
 </main>";
 //require_once("html_footer.php");
