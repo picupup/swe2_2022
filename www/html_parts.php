@@ -57,6 +57,7 @@ function html_intern_pageHeader(){
         <nav class='header-navbar'>
             <ul class='header-navbar-links'>
                 <li><a href='dashboard.php'>DASHBOARD</a></li>
+                <a href='kundenDatenbank.php'><li>KUNDEN</li></a>
                 <a href='./testprototyp/osm.html'><li>KARTE</li></a>
                 <a href='justLoggedOut.php'><li>logout</li></a>
             </ul>

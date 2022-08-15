@@ -22,18 +22,24 @@ $hausnummer = $_POST["hausnummer"];
 $postleitzahl = $_POST["postleitzahl"];
 $ort = $_POST["ort"];
 $email = $_POST["email"];
+
+// Zum Dolmetschter-Auftrag:
+$treffpunkt = $_POST["treffpunkt"];
 $vonSprache = $_POST["vonSprache"];
 $zuSprache = $_POST["zuSprache"];
+$treff_datum_start = $_POST["treff_datum_start"];
+$treff_zeit_start = $_POST["treff_zeit_start"];
+$start=$treff_datum_start." ".$treff_zeit_start;
+
+$treff_datum_ende = $_POST["treff_datum_ende"];
+$treff_zeit_ende = $_POST["treff_zeit_ende"];
+$ende=$treff_datum_ende." ".$treff_zeit_ende;
+
 $kommentar = $_POST["kommentar"];
-// Dolmetsching exklusiv:
-  $treff_datum = $_POST["treff_datum"];
-  $treff_zeit = $_POST["treff_zeit"]; 
-  $treffpunkt = $_POST["treffpunkt"];
 
 
-// include Connection
-// Create Connection
-// Check Connection
+
+// include Connection, Create Connection, Check Connection
 require_once("../private/dbconnection.inc.php");
 include("./scripts/checkIfExist.php");
 $conn = new mysqli($host, $user, $password, $database);
@@ -43,7 +49,7 @@ if (!$conn){
     $ergebnis = checkIfExist($_POST, $conn);
     $kundenId = $ergebnis[0];
     $adressId = $ergebnis[1];
-    
+    $conn -> query("INSERT INTO itc_dolmetscher_anf(kunden_id, beschreibung, datum_time_start, datum_time_end, ort, vonSprache, zuSprache) VALUES ('$kundenId', '$kommentar', '$start', '$ende', '$treffpunkt', '$vonSprache', '$zuSprache')");
     echo "Ihre Kunden-ID: <b>".$kundenId."</br></br>";
     mysqli_close($conn);
   }

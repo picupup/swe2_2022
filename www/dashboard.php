@@ -12,45 +12,41 @@ include("html_parts.php");
 html_intern_pageHeader();
 echo"<main>
         <h2 class='startHeading'>Willkommen, auf Ihrem Dashboard!</h2><br>
-        <h4>Kunden-Datenbank:</h4><br>
-        <table id=kundenTabelle>
+        <h4>Anfragen für Übersetzungen:</h4>
+        <table id=ue_anfragen>
             <thead>
                 <tr>
+                    <th>Anfrage-ID</th>
                     <th>Kunden-ID</th>
-                    <th>Vorname</th>
-                    <th>Nachname</th>
-                    <th>Geschlecht</th>
-                    <th>Geburtsdatum</th>
-                    <th>Kundenart</th>
-                    <th>Straße</th>
-                    <th>Hausnummer</th>
-                    <th>Postleitzahl</th>
-                    <th>Ort</th>
+                    <th>Dokument-Titel</th>
+                    <th>Namen-Aufklärung</th>
+                    <th>von</th>
+                    <th>nach</th>
                 </tr>
             </thead>
             <tfoot>
                 <tr>
+                    <th>Anfrage-ID</th>
                     <th>Kunden-ID</th>
-                    <th>Vorname</th>
-                    <th>Nachname</th>
-                    <th>Geschlecht</th>
-                    <th>Geburtsdatum</th>
-                    <th>Kundenart</th>
-                    <th>Straße</th>
-                    <th>Hausnummer</th>
-                    <th>Postleitzahl</th>
-                    <th>Ort</th>
+                    <th>Dokument-Titel</th>
+                    <th>Namen-Aufklärung</th>
+                    <th>von</th>
+                    <th>nach</th>
                 </tr>
             </tfoot>
         </table><br><br>
-        <h4>Anfragen für Übersetzungen:</h4>
-        <table id=anfragen>
+        <h4>Anfragen für Dolmetsching-Termine:</h4>
+        <table id=do_anfragen>
             <thead>
                 <tr>
                     <th>Anfrage-ID</th>
                     <th>Kunden-ID</th>
                     <th>Beschreibung</th>
-                    <th>Namen-Aufklärung</th>
+                    <th>Ab</th>
+                    <th>Bis</th>
+                    <th>ort</th>
+                    <th>von</th>
+                    <th>nach</th>
                 </tr>
             </thead>
             <tfoot>
@@ -58,10 +54,64 @@ echo"<main>
                     <th>Anfrage-ID</th>
                     <th>Kunden-ID</th>
                     <th>Beschreibung</th>
-                    <th>Namen-Aufklärung</th>
+                    <th>Ab</th>
+                    <th>Bis</th>
+                    <th>ort</th>
+                    <th>von</th>
+                    <th>nach</th>
                 </tr>
             </tfoot>
-        </table>
+        </table><br><br>
+        <h4>Laufende Aufträge Übersetzungen:</h4>
+        <table id=ue_auftraege>
+            <thead>
+                <tr>
+                    <th>Anfrage-ID</th>
+                    <th>Kunden-ID</th>
+                    <th>Ab</th>
+                    <th>Bis</th>
+                    <th>von</th>
+                    <th>nach</th>
+                    <th>ort</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Anfrage-ID</th>
+                    <th>Kunden-ID</th>
+                    <th>Ab</th>
+                    <th>Bis</th>
+                    <th>von</th>
+                    <th>nach</th>
+                    <th>ort</th>
+                </tr>
+            </tfoot>
+        </table><br><br>
+        <h4>Laufende Aufträge Dolmetsching:</h4>
+        <table id=do_auftraege>
+            <thead>
+                <tr>
+                    <th>Anfrage-ID</th>
+                    <th>Kunden-ID</th>
+                    <th>Ab</th>
+                    <th>Bis</th>
+                    <th>von</th>
+                    <th>nach</th>
+                    <th>ort</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Anfrage-ID</th>
+                    <th>Kunden-ID</th>
+                    <th>Ab</th>
+                    <th>Bis</th>
+                    <th>von</th>
+                    <th>nach</th>
+                    <th>ort</th>
+                </tr>
+            </tfoot>
+        </table><br><br>
     </main>";
 //require_once("html_footer.php");
 html_footer();

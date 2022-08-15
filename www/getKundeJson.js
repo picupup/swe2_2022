@@ -46,20 +46,45 @@
         // });
     
 var xhttp2 = new XMLHttpRequest();
-xhttp2.open("GET", "getAnfragen.php", true);
+xhttp2.open("GET", "getUeAnfragen.php", true);
 xhttp2.send();
 xhttp2.onreadystatechange = function() {
     if(xhttp2.readyState == 4 && xhttp2.status == 200){ 
         var data = JSON.parse(xhttp2.responseText);
-        console.log(data);
-        console.log(xhttp.responseText);
-        $('#anfragen').DataTable({
+        //console.log(data);
+        //console.log(xhttp.responseText);
+        $('#ue_anfragen').DataTable({
             "data":data,
             "columns":[
             {"data":"id"},
             {"data":"kunden_id"},
-            {"data":"aufklaerung"},
+            {"data":"dokument_titel"},
             {"data":"namen_aufklaerung"},
+            {"data":"vonSprache"},
+            {"data":"zuSprache"}
+            ]
+        });
+    }
+};
+var xhttp3 = new XMLHttpRequest();
+xhttp3.open("GET", "getDolAnfragen.php", true);
+xhttp3.send();
+xhttp3.onreadystatechange = function() {
+    if(xhttp3.readyState == 4 && xhttp3.status == 200){ 
+        var data = JSON.parse(xhttp3.responseText);
+        console.log(data);
+        console.log(xhttp.responseText);
+        $('#do_anfragen').DataTable({
+            "data":data,
+            "columns":[
+            {"data":"id"},
+            {"data":"kunden_id"},
+            {"data":"beschreibung"},
+            {"data":"datum_time_start"},
+            {"data":"datum_time_end"},
+            {"data":"ort"},
+            {"data":"vonSprache"},
+            {"data":"zuSprache"}
             ]
         });
     }

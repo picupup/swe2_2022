@@ -4,7 +4,7 @@ include("html_parts.php");
 
 
 //require_once("html_intern_pageHeader.php");
-html_intern_pageHeader();
+html_pageHeader();
 
 echo"<main class='messageMain'>
       <div class='message-container'>

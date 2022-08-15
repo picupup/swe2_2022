@@ -42,7 +42,7 @@ if (!$conn){
     $ergebnis = checkIfExist($_POST, $conn);
     $kundenId = $ergebnis[0];
     $adressId = $ergebnis[1];
-    $sql = ;
+    $conn -> query("INSERT INTO itc_uebersetzer_anf(kunden_id, dokument_titel, namen_aufklaerung, vonSprache, zuSprache) VALUES ($kundenId, '$_POST[docTyp]', '$_POST[kommentar]', '$_POST[vonSprache]', '$_POST[zuSprache]')");
     echo "Ihre Kunden-ID: <b>".$kundenId."</br></br>";
     mysqli_close($conn);
   }

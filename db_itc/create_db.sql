@@ -67,9 +67,9 @@ CREATE TABLE itc_kunden (
     vorname  TEXT,
     nachname TEXT,
     geschlecht TEXT,
-    gbdatum TEXT,
+    gbdatum DATE,
     art TEXT,
-    adresse INT,
+	adresse INT,
     PRIMARY KEY (id),
     FOREIGN KEY (adresse) REFERENCES itc_adresse(id)
 );
@@ -80,19 +80,23 @@ CREATE TABLE itc_kunden (
 CREATE TABLE itc_uebersetzer_anf(
     id INT NOT NULL AUTO_INCREMENT,
     kunden_id INT,
-    aufklaerung TEXT,
+    dokument_titel TEXT,
     namen_aufklaerung TEXT,
-    PRIMARY KEY (id),
+    vonSprache TEXT,
+	zuSprache TEXT,
+	PRIMARY KEY (id),
     FOREIGN KEY (kunden_id) REFERENCES itc_kunden(id)
 );
 
 CREATE TABLE itc_dolmetscher_anf (
     id INT NOT NULL AUTO_INCREMENT,
     kunden_id INT,
-    aufklaerung TEXT,
+    beschreibung TEXT,
     datum_time_start DATETIME,
     datum_time_end DATETIME,
     ort TEXT,
+    vonSprache TEXT,
+	zuSprache TEXT,
     PRIMARY KEY (id),
     FOREIGN KEY  (kunden_id) REFERENCES itc_kunden(id)
 );
