@@ -40,19 +40,21 @@ $kommentar = $_POST["kommentar"];
 
 
 // include Connection, Create Connection, Check Connection
-require_once("../private/dbconnection.inc.php");
+//require_once("../private/dbconnection.inc.php");
 include("./scripts/checkIfExist.php");
-$conn = new mysqli($host, $user, $password, $database);
-if (!$conn){
-    die("Connection failed: " . mysqli_connect_error());
-} else {
+include("db_connection.php");
+$conn = return_db_connection();
+// $conn = new mysqli($host, $user, $password, $database);
+// if (!$conn){
+//     die("Connection failed: " . mysqli_connect_error());
+// } else {
     $ergebnis = checkIfExist($_POST, $conn);
     $kundenId = $ergebnis[0];
     $adressId = $ergebnis[1];
     $conn -> query("INSERT INTO itc_dolmetscher_anf(kunden_id, beschreibung, datum_time_start, datum_time_end, ort, vonSprache, zuSprache) VALUES ('$kundenId', '$kommentar', '$start', '$ende', '$treffpunkt', '$vonSprache', '$zuSprache')");
     echo "Ihre Kunden-ID: <b>".$kundenId."</br></br>";
     mysqli_close($conn);
-  }
+  // }
 
   echo" <h3>Wir haben Ihre Anfrage erhalten.</h3><br>
         <h4>Sie bekommen schnellstmöglich Rückmeldung.<h4>

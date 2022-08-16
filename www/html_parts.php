@@ -1,6 +1,5 @@
 <?php
 
-
 function html_pageHeader(){
     echo"<!DOCTYPE html>
 <html>
@@ -45,7 +44,8 @@ function html_intern_pageHeader(){
         <script type=\"text/javascript\" src=\"./DataTables/files/Select-1.4.0/js/dataTables.select.min.js\"></script>
         <script type=\"text/javascript\" src=\"./DataTables/files/Buttons-2.2.3/js/dataTables.buttons.min.js\"></script>
         
-       
+    
+
         <script type=\"text/javascript\" src=\"./getKundeJson.js\"></script>
         
     </head>
@@ -66,7 +66,10 @@ function html_intern_pageHeader(){
 }
 
 function html_footer(){
+    include("db_connection.php");
+    $conn = return_db_connection();
     echo"<footer class='footer'>
+    <script type=\"text/javascript\" src=\"dialoge.js\"></script>
             <div class='container'>
                 <p style='text-align:center;color:white;font-size:10px'>Made by: Team-Swifty</p>
             </div>
@@ -86,7 +89,14 @@ function html_footer(){
     anfrageformular_Dol();
     echo"
         </div>
-        <script src='dialoge.js'></script>
+        <div class='dialog' id='auftragnehmer_form_dia'>
+        <a href='#' role='button' class='dialog-schliessen-button' onclick=\"dialogSchliessen('auftragnehmer_form_dia')\">
+            X 
+        </a>";
+    formUbersetzerDolmetscherAnlegen($conn);
+    echo"
+    </div>
+    
     </body>
 </html>";
 }
@@ -198,9 +208,9 @@ function anfrageformular_Dol(){
 
         <p style='font-weight:bold'>Angaben zum Auftrag:</p>
         <label> von Sprache </label>
-        <input name='vonSprache' id='von_sprache_id' type='text' placeholder='Sprache Ihres Dokuments'value=''  required > <br>
+        <input name='vonSprache' id='von_sprache_id' type='text' placeholder='Sprache 1'value=''  required > <br>
         <label> zu Sprache </label>
-        <input name='zuSprache' id='zu_sprache_id' type='text' placeholder='zu Sprache' value=''  required> <br>
+        <input name='zuSprache' id='zu_sprache_id' type='text' placeholder='Sprache 2' value=''  required> <br>
         
         <!--Auftragsdaten exklusiv für Dolmetscher-->
         <label> Treffpunkt </label>
@@ -228,10 +238,7 @@ function anfrageformular_Dol(){
     //Ich denke das hier brauchen wir nicht mehr
     //onclick='anfrage_antwort(this)'
 }
-
 function formUbersetzerDolmetscherAnlegen($conn){
-    include("scripts/sprachen.php");
-    $sprachen = get_all_sprachen($conn);
     // vorname  TEXT,
     // nachname TEXT,
     // geschlecht TEXT,
@@ -323,6 +330,7 @@ return "<h1> Übersetzer/Dolmetscher anlegen </h1>
             <button id='email' type='submit'> Übersetzer anlegen </button>
         </form>";
 }
+
 ?>
 
 
