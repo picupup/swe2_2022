@@ -14,7 +14,7 @@ insert into itc_sprachen (sprache) values ('Mongolian');
 insert into itc_sprachen (sprache) values ('Belarusian');
 insert into itc_sprachen (sprache) values ('Armenian');
 insert into itc_sprachen (sprache) values ('Finnish');
-insert into itc_sprachen (sprache) values ('German');
+insert into itc_sprachen (sprache) values ('Deutsch');
 insert into itc_sprachen (sprache) values ('Italian');
 insert into itc_sprachen (sprache) values ('Luxembourgish');
 insert into itc_sprachen (sprache) values ('Dhivehi');
