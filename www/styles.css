@@ -183,8 +183,8 @@ header {
   pointer-events: auto;
 }
 
-#ue_anfrage_dia #dol_anfrage_dia #auftragnehmer_form_dia{
-  width: 30%;
+#ue_anfrage_dia, #dol_anfrage_dia, #auftragnehmer_form_dia{
+  width: 70%;
 }
 
 .dialog-schliessen-button{
@@ -195,4 +195,10 @@ header {
   line-height: 32px;
   color: rgba(0,0,0,0.4);
   text-decoration: none;
+}
+
+section{
+  display: inline-block;
+  padding: 5px;
+
 }

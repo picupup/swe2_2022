@@ -58,6 +58,7 @@ function html_intern_pageHeader(){
             <ul class='header-navbar-links'>
                 <li><a href='dashboard.php'>DASHBOARD</a></li>
                 <a href='kundenDatenbank.php'><li>KUNDEN</li></a>
+                <a href='sprachmittlerDatenbank.php'><li>MITTLER</li></a>
                 <a href='./testprototyp/osm.html'><li>KARTE</li></a>
                 <a href='justLoggedOut.php'><li>logout</li></a>
             </ul>
@@ -93,7 +94,7 @@ function html_footer(){
         <a href='#' role='button' class='dialog-schliessen-button' onclick=\"dialogSchliessen('auftragnehmer_form_dia')\">
             X 
         </a>";
-    formUbersetzerDolmetscherAnlegen($conn);
+    echo formUbersetzerDolmetscherAnlegen($conn);
     echo"
     </div>
     
@@ -103,7 +104,7 @@ function html_footer(){
 function anfrageformular_Ue(){
     echo"
     <nav>
-    <h3> Anfrage für die Übersetzung eines Dokuments stellen: </h3> <br>
+    <h2> Anfrage für Dokumentübersetzung: </h2> <br>
     <form method='post' action='./ue_anfrageVerarbeiten.php'>
 
         <!--Stammdaten-->
@@ -113,7 +114,8 @@ function anfrageformular_Ue(){
         <label> Vorname </label>
         <input id='vn_id' type='text' name='vorname' placeholder='Vorname' value='' required> <br>
         <label> Geburtsdatum </label>
-        <input id='gb_id' type='date' name='geburtsdatum' placeholder='Geburtsdatum' value='' required> <br>
+        <input id='gb_id' type='date' name='gebur
+        tsdatum' placeholder='Geburtsdatum' value='' required> <br>
         
         <label for='ge_id'>Geschlecht</label>
         <select name='geschlecht' id='ge_id' defaultValue=''>
@@ -131,9 +133,9 @@ function anfrageformular_Ue(){
         <label> Straße </label> 
         <input id='st_id' type='text' name='strasse' placeholder='Straße' value='' required>
         <label> Nr. </label> 
-        <input id='hausnr_id' type='text' name='hausnummer' placeholder='Hausnr' value='' required> <br>
+        <input id='hausnr_id' type='text' name='hausnummer' placeholder='Hausnr.' value='' required> <br>
         <label> PLZ </label> 
-        <input id='plz_id' type='text' name='postleitzahl' placeholder='PLZ' value='' required> <br>
+        <input id='plz_id' type='text' name='postleitzahl' placeholder='PLZ' value='' required>
         <label> Ort </label> 
         <input id='ort_id' type='text' name='ort' placeholder='Ort' value='' required> <br>
         <label> E-Mail </label>
@@ -152,10 +154,10 @@ function anfrageformular_Ue(){
         
         <!--Kommentar-->
         <label>Notieren Sie bitte hier die für die gewählte Zielsprache korrekte Schreibweise<br> aller in Ihrem Dokument vorkommenden Namen:</label> <br>
-        <textarea name='kommentar' rows='7'></textarea> <br>
+        <textarea name='kommentar' rows='5'></textarea> <br>
 
         <input type='Checkbox' name='abholung'>
-        <label>Ich möchte die die Übersetzung in Papierform in der Geschäftsstelle vorort abholen</labell><br>
+        <label>Ich möchte die die Übersetzung in Papierform in der Geschäftsstelle abholen</labell><br>
         <input type='checkbox' name='agb' required>
         <label>Hiermit erkläre ich mich mit den Allgemeinen Geschäftsbedingungen der ITC-Bremerhaven einverstanden</label><br>
     
@@ -170,7 +172,7 @@ function anfrageformular_Ue(){
 function anfrageformular_Dol(){
     echo"
     <nav>
-    <h3> Anfrage für einen Dolmetscher stellen: </h3> <br>
+    <h2> Dolmetscher anfragen: </h2> <br>
     <form method='post' action='./do_anfrageVerarbeiten.php'>
 
         <!--Stammdaten-->
@@ -200,7 +202,7 @@ function anfrageformular_Dol(){
         <label> Nr. </label> 
         <input id='hausnr_id' type='text' name='hausnummer' placeholder='Hausnr' value='' required> <br>
         <label> PLZ </label> 
-        <input id='plz_id' type='text' name='postleitzahl' placeholder='PLZ' value='' required> <br>
+        <input id='plz_id' type='text' name='postleitzahl' placeholder='PLZ' value='' required>
         <label> Ort </label> 
         <input id='ort_id' type='text' name='ort' placeholder='Ort' value='' required> <br>
         <label> E-Mail </label>
@@ -224,7 +226,7 @@ function anfrageformular_Dol(){
 
         <!--Kommentar-->
         <label> Zusätzliche Informationen für Ihren Dolmetscher:  </label><br>
-        <textarea name='kommentar' rows='7'></textarea><br>
+        <textarea name='kommentar' rows='5'></textarea><br>
 
         <!--AGB-Bestätigung-->
         <input type='checkbox' name='agb' required>
@@ -252,7 +254,7 @@ function formUbersetzerDolmetscherAnlegen($conn){
     // tel TEXT,
     // Zeilenpreis TEXT,
     // adresse INT,
-return "<h1> Übersetzer/Dolmetscher anlegen </h1>
+return "<h2> Übersetzer/Dolmetscher anlegen </h2><br>
         <form method='post' action='./auftragnehmer_angelegt.php'>
             <label> Vorname* </label> 
             <input id=\"v_name\" value=\"\" type=\"text\" name=\"vorname\" placeholder='Vorname' required> <br>
@@ -283,54 +285,58 @@ return "<h1> Übersetzer/Dolmetscher anlegen </h1>
             <label> Telefonnummer </label>
             <input id='telefonnummer' value=\"\" type=\"numbers\" placeholder='Telefonnummer' name=\"telefonnummer\"> <br> 
             
-            <label> Zeilenpreis for='Zeilenpreis'</label>
-            <input id='zeilenpreis' value='' type='text' placeholder='Zeilenpreis' name='zeilenpreis'> <Section>
-
+            <label for='Zeilenpreis'>Zeilenpreis</label>
+            <input id='zeilenpreis' value='' type='text' placeholder='Zeilenpreis' name='zeilenpreis'>
+            <br>
             <label> Straße </label> 
             <input id='st_id' type='text' name='strasse' placeholder='Straße' value='' required>
             <label> Nr. </label> 
-            <input id='hausnr_id' type='text' name='hausnummer' placeholder='Hausnr' value='' required> <br>
+            <input id='hausnr_id' type='text' name='hausnummer' placeholder='Hausnr.' value='' required>
             <label> PLZ </label> 
-            <input id='plz_id' type='text' name='postleitzahl' placeholder='PLZ' value='' required> <br>
+            <input id='plz_id' type='text' name='postleitzahl' placeholder='PLZ' value='' required>
             <label> Ort </label> 
             <input id='ort_id' type='text' name='ort' placeholder='Ort' value='' required> <br>
-                
-            <label for='dol_ldolmetscherSpracheable_id'>Dolmetscher Sprachen \"Für mehr als eine Auswahl STR (windows) oder command (mac) gedrückt halten.\" </label></p>
-            <select size='15' name='dolmetscherSprache' id='dolmetscherSprache' defaultValue='null' multiple>
+            
+            
+            <Section>
+            <label for='dol_ldolmetscherSpracheable_id'>Dolmetscher Sprachen</label></p>
+            <select size='10' name='dolmetscherSprache' id='dolmetscherSprache' defaultValue='null' multiple>
                 <option disabled selected value> -- wähle eine option -- </option>
                 $sprachen
-
-            </select>
+                </select>
+                <p style=\"font-size:10px\" >Für mehr als eine Auswahl STR <br> (windows) oder command (mac) <br>gedrückt halten.</p>
             </Section>
-            <br>
             
             <Section>
-                <p><label for='ubersetzerSprachen'>Übersetzer Sprachen  \"Für mehr als eine Auswahl STR (windows) oder command (mac) gedrückt halten.\" >></label></p>
-                <select  size='15' name='ubersetzerSprache' id='ubersetzerSprachen' defaultValue='null' multiple>
+                <p><label for='ubersetzerSprachen'>Übersetzer Sprachen</label></p>
+                <select  size='10' name='ubersetzerSprache' id='ubersetzerSprachen' defaultValue='null' multiple>
                     <option disabled selected value> -- wähle eine option -- </option>
                     $sprachen
-                </select><br>
+                </select>
+                <p style=\"font-size:10px\" >Für mehr als eine Auswahl STR <br> (windows) oder command (mac) <br>gedrückt halten.</p>
             </Section>
-            <br>
+            
             <Section>
-                <p><label for='beideVarianten'>Beide Varianten \"Für mehr als eine Auswahl STR (windows) oder command (mac) gedrückt halten.\"</label></p>
-                <select size='15' name='beideVarianten' id='beideVarianten' defaultValue='null' multiple>
+                <p><label for='beideVarianten'>Beide Varianten</label></p>
+                <select size='10' name='beideVarianten' id='beideVarianten' defaultValue='null' multiple>
                 <option disabled selected value> -- wähle eine option -- </option>
                     $sprachen
-                </select><br>
+                </select>
+                <p style=\"font-size:10px\" >Für mehr als eine Auswahl STR <br> (windows) oder command (mac) <br>gedrückt halten.</p>
             </Section>
-            <br>
-            <Section>
-                <p><label for='mutterSprache'>Mutter Sprache \"Für mehr als eine Auswahl STR (windows) oder command (mac) gedrückt halten.\"</label></p>
-                <select size='15' name='mutterSprache' id='mutterSprache' required>
-                    $sprachen
-                </select><br>
-            </Section>
-
             
-            <button id='email' type='submit'> Übersetzer anlegen </button>
-        </form>";}
+            <Section>
+                <p><label for='mutterSprache'>Mutter Sprache</label></p>
+                <select size='10' name='mutterSprache' id='mutterSprache' defaultValue='null' multiple>
+                <option disabled selected value> -- wähle eine option -- </option>   
+                    $sprachen
+                </select>
+                <p style=\"font-size:10px\" >Für mehr als eine Auswahl STR <br> (windows) oder command (mac) <br>gedrückt halten.</p>
+            </Section><br>
 
+            <button id='email' type='submit'> Mittler anlegen </button>
+        </form>";
+}
 ?>
 
 
