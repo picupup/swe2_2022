@@ -151,10 +151,12 @@ function anfrageformular_Ue(){
         <label>Hiermit erkläre ich mich mit den Allgemeinen Geschäftsbedingungen der ITC-Bremerhaven einverstanden</label><br>
     
         
-        <button type='submit' onclick='anfrage_antwort(this)'>Abschicken</button> 
+        <button type='submit'>Abschicken</button> 
     </form>
 </nav>
     ";
+    //Ich denke das hier brauchen wir nicht mehr
+    //onclick='anfrage_antwort(this)'
 }
 function anfrageformular_Dol(){
     echo"
@@ -220,9 +222,108 @@ function anfrageformular_Dol(){
         <label>Hiermit erkläre ich mich mit den Allgemeinen Geschäftsbedingungen der ITC-Bremerhaven einverstanden</label><br>
     
 
-        <button type='submit' onclick='anfrage_antwort(this)'>Abschicken</button> 
+        <button type='submit' >Abschicken</button> 
     </form>
 </nav>
     ";
+    //Ich denke das hier brauchen wir nicht mehr
+    //onclick='anfrage_antwort(this)'
+}
+
+function formUbersetzerDolmetscherAnlegen(){
+    include("scripts/sprachen.php");
+    $sprachen = get_all_sprachen();
+    // vorname  TEXT,
+    // nachname TEXT,
+    // geschlecht TEXT,
+    // gbdatum TEXT,
+    // staatsang TEXT,
+    // gbort TEXT,
+    // beruf TEXT,
+    // email TEXT,
+    // tel TEXT,
+    // Zeilenpreis TEXT,
+    // adresse INT,
+return "<h1> Übersetzer/Dolmetscher anlegen </h1>
+        <form method='post' action='./auftragnehmer_angelegt.php'>
+            <label> Vorname* </label> 
+            <input id=\"v_name\" value=\"\" type=\"text\" name=\"vorname\" placeholder='Vorname' required> <br>
+            <label> Nachname* </label>
+            <input id=\"n_name\" value=\"\" type=\"text\" name=\"name\" placeholder='Namchname' required> <br>
+            <label for='ge_id'>Geschlecht</label>
+            <select name='geschlecht' id='ge_id' defaultValue=''>
+                <option value='m'>Mänlich</option>
+                <option value='w'>Weiblich</option>
+                <option value='d'>Divers</option>
+            </select><br>
+            <label> Geburtsdatum </label>      
+            <input id='geburtsdatum' type='date' name='geburtsdatum' placeholder='Geburtsdatum' value='' > <br>
+
+            <label> Geburtsort </label>      
+            <input id='geburtsort' type='text' name='geburtsort' placeholder='Geburtsort' value=''> <br>
+
+
+            <label> Nationalität </label>      
+            <input id='staatsang' type='text' name='staatsang' placeholder='Bitt ein Land eingeben' value=''> <br>
+
+            <label> Beruf </label>      
+            <input id='beruf' type='text' name='beruf' placeholder='Beruf' value='' > <br>
+            
+
+            <label> E-Mail </label>
+            <input id=\"email\" value=\"\" type=\"text\" placeholder='Email' name=\"email\" required> <br>
+            <label> Telefonnummer </label>
+            <input id=\"phone\" value=\"\" type=\"numbers\" placeholder='Telefonnummer' name=\"telefonnummer\"> <br> 
+            
+            <label> Zeilenpreis for='Zeilenpreis'</label>
+            <input id='zeilenpreis' value='' type='text' placeholder='Zeilenpreis' name='zeilenpreis'> <Section>
+
+            <label> Straße </label> 
+            <input id='st_id' type='text' name='strasse' placeholder='Straße' value='' required>
+            <label> Nr. </label> 
+            <input id='hausnr_id' type='text' name='hausnummer' placeholder='Hausnr' value='' required> <br>
+            <label> PLZ </label> 
+            <input id='plz_id' type='text' name='postleitzahl' placeholder='PLZ' value='' required> <br>
+            <label> Ort </label> 
+            <input id='ort_id' type='text' name='ort' placeholder='Ort' value='' required> <br>
+                
+            <label for='dol_ldolmetscherSpracheable_id'>Dolmetscher Sprachen \"Für mehr als eine Auswahl STR (windows) oder command (mac) gedrückt halten.\" </label></p>
+            <select size='15' name='dolmetscherSprache' id='dolmetscherSprache' defaultValue='null' multiple>
+                <option disabled selected value> -- wähle eine option -- </option>
+                $sprachen
+
+            </select>
+            </Section>
+            <br>
+            
+            <Section>
+                <p><label for='ubersetzerSprachen'>Übersetzer Sprachen  \"Für mehr als eine Auswahl STR (windows) oder command (mac) gedrückt halten.\" >></label></p>
+                <select  size='15' name='ubersetzerSprache' id='ubersetzerSprachen' defaultValue='null' multiple>
+                    <option disabled selected value> -- wähle eine option -- </option>
+                    $sprachen
+                </select><br>
+            </Section>
+            <br>
+            <Section>
+                <p><label for='beideVarianten'>Beide Varianten \"Für mehr als eine Auswahl STR (windows) oder command (mac) gedrückt halten.\"</label></p>
+                <select size='15' name='beideVarianten' id='beideVarianten' defaultValue='null' multiple>
+                <option disabled selected value> -- wähle eine option -- </option>
+                    $sprachen
+                </select><br>
+            </Section>
+            <br>
+            <Section>
+                <p><label for='mutterSprache'>Mutter Sprache \"Für mehr als eine Auswahl STR (windows) oder command (mac) gedrückt halten.\"</label></p>
+                <select size='15' name='mutterSprache' id='mutterSprache' defaultValue='null'>
+                <option disabled selected value> -- wähle eine option -- </option>
+                    $sprachen
+                </select><br>
+            </Section>
+
+            
+            <button id='email' type='submit'> Übersetzer anlegen </button>
+        </form>";
 }
 ?>
+
+

@@ -41,9 +41,12 @@ CREATE TABLE itc_translator (
     nachname TEXT,
     geschlecht TEXT,
     gbdatum TEXT,
-    staatsang TEXT,
     gbort TEXT,
+    staatsang TEXT,
     beruf TEXT,
+    email TEXT,
+    tel TEXT,
+    zeilenpreis TEXT,
     adresse INT,
     PRIMARY KEY (id),
     FOREIGN KEY (adresse) REFERENCES itc_adresse(id)

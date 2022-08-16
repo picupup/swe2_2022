@@ -28,7 +28,7 @@ function get_all_sprachen(){
     }
     $sql = "select id, sprache from itc_sprachen";
     $result=mysqli_query($conn, $sql);
-    
+    $string = "";
     while($row = mysqli_fetch_assoc($result)) {
         $con=true;
         $eins;
@@ -43,11 +43,13 @@ function get_all_sprachen(){
             }
         }
         $con=true;
-        echo "<option value=\"",$eins,"\">",$zwei,"</option>";
+        $string .= "<option value=\" $eins \"> $zwei </option>";
+        //echo "<option value=\" $eins \"> $zwei </option>";
         //$data[] = $row;
     };
-    echo "</select><br>";
-    echo $row;
+    return "$string";
+    //echo "</select><br>";
+    //echo $row;
 
     // if (isset($data)){
     //     $json = json_encode($data);
