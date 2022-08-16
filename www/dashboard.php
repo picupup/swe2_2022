@@ -1,14 +1,9 @@
 <?php
-
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 include("html_parts.php");
-
-
-
-//require_once("html_intern_pageHeader.php");
 html_intern_pageHeader();
 echo"<main>
         <h2 class='startHeading'>Willkommen, auf Ihrem Dashboard!</h2><br>
@@ -116,7 +111,5 @@ echo"<main>
             </tfoot>
         </table><br><br>
     </main>";
-
-//require_once("html_footer.php");
 html_footer();
 ?>

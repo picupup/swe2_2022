@@ -1,9 +1,7 @@
 <?php  
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
 
 include("html_parts.php");
 html_pageHeader();
@@ -12,6 +10,7 @@ echo"<main class=messageMain>
         <div class='message-box'>
           <h2>Vielen Dank!</h2><br>";
 
+//Stammdaten
 $name = $_POST["name"];
 $vorname = $_POST["vorname"];
 $geburtsdatum = $_POST["geburtsdatum"];
@@ -37,26 +36,18 @@ $ende=$treff_datum_ende." ".$treff_zeit_ende;
 
 $kommentar = $_POST["kommentar"];
 
-
-
-// include Connection, Create Connection, Check Connection
-//require_once("../private/dbconnection.inc.php");
-include("./scripts/checkIfExist.php");
+// include Connection
 include("db_connection.php");
+include("./scripts/checkIfExist.php");
 $conn = return_db_connection();
-// $conn = new mysqli($host, $user, $password, $database);
-// if (!$conn){
-//     die("Connection failed: " . mysqli_connect_error());
-// } else {
-    $ergebnis = checkIfExist($_POST, $conn);
-    $kundenId = $ergebnis[0];
-    $adressId = $ergebnis[1];
-    $conn -> query("INSERT INTO itc_dolmetscher_anf(kunden_id, beschreibung, datum_time_start, datum_time_end, ort, vonSprache, zuSprache) VALUES ('$kundenId', '$kommentar', '$start', '$ende', '$treffpunkt', '$vonSprache', '$zuSprache')");
-    echo "Ihre Kunden-ID: <b>".$kundenId."</br></br>";
-    mysqli_close($conn);
-  // }
+$ergebnis = checkIfExist($_POST, $conn);
+$kundenId = $ergebnis[0];
+$adressId = $ergebnis[1];
+$conn -> query("INSERT INTO itc_dolmetscher_anf(kunden_id, beschreibung, datum_time_start, datum_time_end, ort, vonSprache, zuSprache) VALUES ('$kundenId', '$kommentar', '$start', '$ende', '$treffpunkt', '$vonSprache', '$zuSprache')");
+echo "Ihre Kunden-ID: <b>".$kundenId."</br></br>";
+mysqli_close($conn);
 
-  echo" <h3>Wir haben Ihre Anfrage erhalten.</h3><br>
+echo" <h3>Wir haben Ihre Anfrage erhalten.</h3><br>
         <h4>Sie bekommen schnellstmöglich Rückmeldung.<h4>
       </div>
     </div>
