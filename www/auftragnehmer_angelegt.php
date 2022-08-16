@@ -69,7 +69,7 @@ if (!$conn){
 
   } else
   {
-    echo "<h2>Könnte nicht eingefügt werden. <br><br>Bitte eine der Varianten der Sprachfähigkeiten auswählen.</h2>";
+    echo "<h2>Könnte nicht eingefügt werden. <br><br>Bitte eine Variante der Sprachfähigkeiten auswählen.</h2>";
   }
 }
 
