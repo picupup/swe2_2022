@@ -322,8 +322,7 @@ return "<h1> Übersetzer/Dolmetscher anlegen </h1>
             <br>
             <Section>
                 <p><label for='mutterSprache'>Mutter Sprache \"Für mehr als eine Auswahl STR (windows) oder command (mac) gedrückt halten.\"</label></p>
-                <select size='15' name='mutterSprache' id='mutterSprache' defaultValue='null'>
-                <option disabled selected value> -- wähle eine option -- </option>
+                <select size='15' name='mutterSprache' id='mutterSprache' required>
                     $sprachen
                 </select><br>
             </Section>
