@@ -329,8 +329,7 @@ return "<h1> Übersetzer/Dolmetscher anlegen </h1>
 
             
             <button id='email' type='submit'> Übersetzer anlegen </button>
-        </form>";
-}
+        </form>";}
 
 ?>
 
