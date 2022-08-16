@@ -239,6 +239,8 @@ function anfrageformular_Dol(){
     //onclick='anfrage_antwort(this)'
 }
 function formUbersetzerDolmetscherAnlegen($conn){
+    include("scripts/sprachen.php");
+    $sprachen = get_all_sprachen($conn);
     // vorname  TEXT,
     // nachname TEXT,
     // geschlecht TEXT,
