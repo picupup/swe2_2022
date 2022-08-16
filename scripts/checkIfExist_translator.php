@@ -20,7 +20,7 @@ function checkIfExist_tr($array, $datenbankVerbindung){
     // mysqli_affected_rows zählt, wie viele Zeilen gefunden wurden
 
 
-    $sql2 = "SELECT * FROM itc_translator WHERE vorname='$array[vorname]' and nachname='$array[name]' and geschlecht=$arra[geschlecht]  and gbdatum='$array[geburtsdatum]' and gbort='$array[geburtsort]' and staatsang='$array[staatsang]' and  beruf='$array[beruf]' and  email='$array[email]' and  telefonnummer='$array[telefonnummer]' and  zeilenpreis='$array[zeilenpreis]' " ;
+    $sql2 = "SELECT * FROM itc_translator WHERE vorname='$array[vorname]' and nachname='$array[name]' and geschlecht='$array[geschlecht]' and gbdatum='$array[geburtsdatum]' and gbort='$array[geburtsort]' and staatsang='$array[staatsang]' and  beruf='$array[beruf]' and  email='$array[email]' and  tel='$array[telefonnummer]' and  zeilenpreis='$array[zeilenpreis]' " ;
       $result2 = mysqli_query($datenbankVerbindung, $sql2);
       $affected2 = mysqli_affected_rows($datenbankVerbindung);
 

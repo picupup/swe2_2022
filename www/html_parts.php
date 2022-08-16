@@ -230,9 +230,9 @@ function anfrageformular_Dol(){
     //onclick='anfrage_antwort(this)'
 }
 
-function formUbersetzerDolmetscherAnlegen(){
+function formUbersetzerDolmetscherAnlegen($conn){
     include("scripts/sprachen.php");
-    $sprachen = get_all_sprachen();
+    $sprachen = get_all_sprachen($conn);
     // vorname  TEXT,
     // nachname TEXT,
     // geschlecht TEXT,
@@ -251,7 +251,7 @@ return "<h1> Übersetzer/Dolmetscher anlegen </h1>
             <label> Nachname* </label>
             <input id=\"n_name\" value=\"\" type=\"text\" name=\"name\" placeholder='Namchname' required> <br>
             <label for='ge_id'>Geschlecht</label>
-            <select name='geschlecht' id='ge_id' defaultValue=''>
+            <select name='geschlecht' id='geschlecht' defaultValue=''>
                 <option value='m'>Mänlich</option>
                 <option value='w'>Weiblich</option>
                 <option value='d'>Divers</option>
@@ -271,9 +271,9 @@ return "<h1> Übersetzer/Dolmetscher anlegen </h1>
             
 
             <label> E-Mail </label>
-            <input id=\"email\" value=\"\" type=\"text\" placeholder='Email' name=\"email\" required> <br>
+            <input id=\"email\" value=\"\" type=\"text\" placeholder='Email' name='email' required> <br>
             <label> Telefonnummer </label>
-            <input id=\"phone\" value=\"\" type=\"numbers\" placeholder='Telefonnummer' name=\"telefonnummer\"> <br> 
+            <input id='telefonnummer' value=\"\" type=\"numbers\" placeholder='Telefonnummer' name=\"telefonnummer\"> <br> 
             
             <label> Zeilenpreis for='Zeilenpreis'</label>
             <input id='zeilenpreis' value='' type='text' placeholder='Zeilenpreis' name='zeilenpreis'> <Section>

@@ -20,9 +20,9 @@ function get_all_mt_sprachen(){
 
 }
 
-function get_all_sprachen(){
-    require_once("../private/dbconnection.inc.php");
-    $conn = new mysqli($host, $user, $password, $database);
+function get_all_sprachen($conn){
+    // require_once("/var/www/html/swe2_2022team17/private/dbconnection.inc.php");
+    // $conn = new mysqli($host, $user, $password, $database);
     if (!$conn){
         die("Connection failed: " . mysqli_connect_error());
     }
