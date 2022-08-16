@@ -8,8 +8,23 @@
             var data = JSON.parse(xhttp.responseText);
             //console.log(data);
             $('#kundenTabelle').DataTable({
-                    "data":data,
-                    "columns":[
+                dom: 'Bfrtip',
+                buttons:[   
+                    {
+                        //extend: 'selectSingle',
+                        text: 'Bearbeiten',
+                         action: function ( e, dt, node, config ) {
+                             console.log( dt.row( { selected: true } ).data() );
+                         }
+                    }
+                ],
+                    select: {
+                        style: "single",
+                        blurable: true,
+                        info: true, 
+                    },
+                    data:data,
+                    columns:[
                     {"data":"id"},
                     {"data":"vorname"},
                     {"data":"nachname"},
@@ -20,9 +35,13 @@
                     {"data":"hausnr"},
                     {"data":"plz"},
                     {"data":"ort"}
-                    ]
+                    ],
+                    
                 });
+                //table.rows({selected: true}).data();
 
+            // var tabelle = $('kundenTabelle').DataTable();
+            // table.rows({ selected: true }).data();
         }
 
     }

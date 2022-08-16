@@ -8,8 +8,6 @@ function html_pageHeader(){
         <meta charset='utf-8'>
         <title>ITC INDEX</title>
         <link rel='stylesheet' type='text/css' href='./styles.css' />
-        <script type='text/javascript' src='./getFormulars.js'></script>
-
     </head>
     <body>
     <header class='header'>
@@ -35,20 +33,21 @@ function html_intern_pageHeader(){
     <head>
         <meta charset='utf-8'>
         <title>ITC INDEX</title>
-        <link rel='stylesheet' type='text/css' href='./styles.css' />
-        <!-- <link rel='stylesheet' type='text/css' href='//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css' /> -->
-
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"DataTables/files/datatables.min.css\"/>
-        <script type='text/javascript' src='https://code.jquery.com/jquery-3.5.1.js'></script>
-        <script type='text/javascript' src='//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js'></script>
-        <script type=\"text/javascript\" src=\"DataTables/files/datatables.min.js\"></script>
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"./styles.css\" />
         
+
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"./DataTables/files/Buttons-2.2.3/css/buttons.dataTables.min.css\"/>
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"./DataTables/files/datatables.min.css\"/>
+        
+        <script type=\"text/javascript\" src=\"./DataTables/files/jQuery-3.6.0/jquery-3.6.0.js\"></script>
+        <script type=\"text/javascript\" src=\"./DataTables/files/DataTables-1.12.1/js/jquery.dataTables.min.js\"></script>
+        <script type=\"text/javascript\" src=\"./DataTables/files/datatables.min.js\"></script>
+        <script type=\"text/javascript\" src=\"./DataTables/files/Select-1.4.0/js/dataTables.select.min.js\"></script>
+        <script type=\"text/javascript\" src=\"./DataTables/files/Buttons-2.2.3/js/dataTables.buttons.min.js\"></script>
         
        
-        <script type='text/javascript' src='./getKundeJson.js'></script>
-        <!-- <script type='text/javascript' src='./dialoge.js'></script> -->
+        <script type=\"text/javascript\" src=\"./getKundeJson.js\"></script>
         
-    
     </head>
     <body>
     <header class='header'>
