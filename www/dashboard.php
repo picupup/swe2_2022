@@ -9,7 +9,7 @@ echo"<main>
         <h2 class='startHeading'>Willkommen auf Ihrem Dashboard!</h2><br>
         <button href='#' onclick=\"dialogOeffnen('ue_anfrage_dia')\">Übersetzer-Anfrage Erstellen</button>
         <button href='#' onclick=\"dialogOeffnen('dol_anfrage_dia')\">Dolmetscher-Anfrage Erstellen</button>
-        <button href='#' onclick=\"dialogOeffnen('auftragnehmer_form_dia')\">Mittler Anlegen</button>
+        <button href='#' onclick=''>Anfrage bearbeiten</button>
         <h4>Anfragen für Übersetzungen:</h4>
         <table id=ue_anfragen>
             <thead>
@@ -64,24 +64,22 @@ echo"<main>
         <table id=ue_auftraege>
             <thead>
                 <tr>
-                    <th>Anfrage-ID</th>
+                    <th>Auftrag-ID</th>
                     <th>Kunden-ID</th>
-                    <th>Ab</th>
-                    <th>Bis</th>
-                    <th>von</th>
-                    <th>nach</th>
-                    <th>ort</th>
+                    <th>Status</th>
+                    <th>Anmerkungen</th>
+                    <th>Übersetzer</th>
+                    <th>Anfrage-ID</th>
                 </tr>
             </thead>
             <tfoot>
                 <tr>
-                    <th>Anfrage-ID</th>
+                    <th>Auftrag-ID</th>
                     <th>Kunden-ID</th>
-                    <th>Ab</th>
-                    <th>Bis</th>
-                    <th>von</th>
-                    <th>nach</th>
-                    <th>ort</th>
+                    <th>Status</th>
+                    <th>Anmerkungen</th>
+                    <th>Übersetzer</th>
+                    <th>Anfrage-ID</th>
                 </tr>
             </tfoot>
         </table><br><br>
@@ -89,24 +87,22 @@ echo"<main>
         <table id=do_auftraege>
             <thead>
                 <tr>
-                    <th>Anfrage-ID</th>
+                    <th>Auftrag-ID</th>
                     <th>Kunden-ID</th>
-                    <th>Ab</th>
-                    <th>Bis</th>
-                    <th>von</th>
-                    <th>nach</th>
-                    <th>ort</th>
+                    <th>Status</th>
+                    <th>Anmerkungen</th>
+                    <th>Dolmetscher</th>
+                    <th>Anfrage-ID</th>
                 </tr>
             </thead>
             <tfoot>
                 <tr>
-                    <th>Anfrage-ID</th>
+                    <th>Auftrag-ID</th>
                     <th>Kunden-ID</th>
-                    <th>Ab</th>
-                    <th>Bis</th>
-                    <th>von</th>
-                    <th>nach</th>
-                    <th>ort</th>
+                    <th>Status</th>
+                    <th>Anmerkungen</th>
+                    <th>Dolmetscher</th>
+                    <th>Anfrage-ID</th>
                 </tr>
             </tfoot>
         </table><br><br>

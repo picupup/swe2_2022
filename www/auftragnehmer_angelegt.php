@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 include("html_parts.php");
 include("scripts/checkIfExist_translator.php");
-require_once("/var/www/html/swe2_2022team17/private/dbconnection.inc.php");
+include("/var/www/html/swe2_2022team17/private/dbconnection.inc.php");
 
 html_pageHeader();
 echo"<main class=messageMain> 

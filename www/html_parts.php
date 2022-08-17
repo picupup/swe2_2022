@@ -46,7 +46,7 @@ function html_intern_pageHeader(){
         
     
 
-        <script type=\"text/javascript\" src=\"./getKundeJson.js\"></script>
+        <script type=\"text/javascript\" src=\"./tabellen_dataTables.js\"></script>
         
     </head>
     <body>
@@ -114,8 +114,7 @@ function anfrageformular_Ue(){
         <label> Vorname </label>
         <input id='vn_id' type='text' name='vorname' placeholder='Vorname' value='' required> <br>
         <label> Geburtsdatum </label>
-        <input id='gb_id' type='date' name='gebur
-        tsdatum' placeholder='Geburtsdatum' value='' required> <br>
+        <input id='gb_id' type='date' name='gbdatum' placeholder='Geburtsdatum' value='' required> <br>
         
         <label for='ge_id'>Geschlecht</label>
         <select name='geschlecht' id='ge_id' defaultValue=''>
@@ -182,7 +181,7 @@ function anfrageformular_Dol(){
         <label> Vorname </label>
         <input id='vn_id' type='text' name='vorname' placeholder='Vorname' value='' required> <br>
         <label> Geburtsdatum </label>      
-        <input id='geburtsdatum' type='date' name='geburtsdatum' placeholder='Geburtsdatum' value='' required> <br>
+        <input id='gb_id' type='date' name='gbdatum' placeholder='Geburtsdatum' value='' required> <br>
         
         <label for='ge_id'>Geschlecht</label>
         <select name='geschlecht' id='ge_id' defaultValue=''>

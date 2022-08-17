@@ -13,7 +13,7 @@ echo"<main class=messageMain>
 //Stammdaten
 $name = $_POST["name"];
 $vorname = $_POST["vorname"];
-$geburtsdatum = $_POST["geburtsdatum"];
+$geburtsdatum = $_POST["gbdatum"];
 $geschlecht = $_POST["geschlecht"];
 $privatGesch = $_POST["privatGesch"];
 $strasse = $_POST["strasse"];
