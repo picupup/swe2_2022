@@ -182,7 +182,7 @@ function anfrageformular_Dol(){
         <label> Vorname </label>
         <input id='vn_id' type='text' name='vorname' placeholder='Vorname' value='' required> <br>
         <label> Geburtsdatum </label>      
-        <input id='gb_id' type='date' name='geburtsdatum' placeholder='Geburtsdatum' value='' required> <br>
+        <input id='geburtsdatum' type='date' name='geburtsdatum' placeholder='Geburtsdatum' value='' required> <br>
         
         <label for='ge_id'>Geschlecht</label>
         <select name='geschlecht' id='ge_id' defaultValue=''>
