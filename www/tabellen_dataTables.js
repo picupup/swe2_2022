@@ -55,7 +55,12 @@ xhttp2.onreadystatechange = function() {
             {"data":"namen_aufklaerung"},
             {"data":"vonSprache"},
             {"data":"zuSprache"}
-            ]
+            ],
+            select: {
+                style: "single",
+                blurable: true,
+                info: true, 
+            }
         });
     }
 };
@@ -76,7 +81,12 @@ xhttp3.onreadystatechange = function() {
             {"data":"ort"},
             {"data":"vonSprache"},
             {"data":"zuSprache"}
-            ]
+            ],
+            select: {
+                style: "single",
+                blurable: true,
+                info: true, 
+            },
         });
     }
 };

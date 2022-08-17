@@ -16,7 +16,7 @@ echo"<main class='messageMain'>
             <label for='lname'>Passwort:</label><br>
             <input type='password' id='pwd' name='passwort' placeholder=''><br>
             <a style='font-size:60%' href='url'>Passwort vergessen</a><br><br>
-            <input type='submit' value='Ok'>
+            <input type='submit' value='  Login  '>
           </form> 
         </div>
       </div>

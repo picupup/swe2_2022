@@ -118,9 +118,9 @@ function anfrageformular_Ue(){
         
         <label for='ge_id'>Geschlecht</label>
         <select name='geschlecht' id='ge_id' defaultValue=''>
-            <option value='m'>Mänlich</option>
-            <option value='w'>Weiblich</option>
-            <option value='d'>Divers</option>
+            <option value='m'>männlich</option>
+            <option value='w'>weiblich</option>
+            <option value='d'>divers</option>
         </select><br>
 
         <label>Person</label>
@@ -185,9 +185,9 @@ function anfrageformular_Dol(){
         
         <label for='ge_id'>Geschlecht</label>
         <select name='geschlecht' id='ge_id' defaultValue=''>
-            <option value='m'>Mänlich</option>
-            <option value='w'>Weiblich</option>
-            <option value='d'>Divers</option>
+            <option value='m'>männlich</option>
+            <option value='w'>weiblich</option>
+            <option value='d'>divers</option>
         </select><br>
 
         <label for='person_art_id'>Person</label>
@@ -261,9 +261,9 @@ return "<h2> Übersetzer/Dolmetscher anlegen </h2><br>
             <input id=\"n_name\" value=\"\" type=\"text\" name=\"name\" placeholder='Namchname' required> <br>
             <label for='ge_id'>Geschlecht</label>
             <select name='geschlecht' id='geschlecht' defaultValue=''>
-                <option value='m'>Mänlich</option>
-                <option value='w'>Weiblich</option>
-                <option value='d'>Divers</option>
+                <option value='m'>männlich</option>
+                <option value='w'>weiblich</option>
+                <option value='d'>divers</option>
             </select><br>
             <label> Geburtsdatum </label>      
             <input id='geburtsdatum' type='date' name='geburtsdatum' placeholder='Geburtsdatum' value='' > <br>
