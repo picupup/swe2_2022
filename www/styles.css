@@ -152,7 +152,7 @@ header {
 .variabler_body{
   background: #eaeaea;
 }
-
+/*Dialog-Fenster*/
 #body-overlay{
   position: fixed;
   top: 0;
@@ -196,7 +196,7 @@ header {
   color: rgba(0,0,0,0.4);
   text-decoration: none;
 }
-
+/*wird nur in Mittler-Formular verwendet*/
 section{
   display: inline-block;
   padding: 5px;

@@ -15,7 +15,7 @@ function html_pageHeader(){
         </div>
         <nav class='header-navbar'>
             <ul class='header-navbar-links'>
-                <li><a href='index.php'>SARTSEITE</a></li>
+                <li><a href='index.php'>STARTSEITE</a></li>
                 <li><a>ÜBER UNS</a></li>
                 <li><a>LEISTUNGEN</a></li>
                 <li><a>PREISE</a></li>
