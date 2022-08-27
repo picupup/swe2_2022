@@ -1,6 +1,3 @@
-
-
-
 function anfrage_antwort(e) {
     var form = document.forms["itc_tr_such_form_id"];
     var nn_id = form["nn_id"].value;
